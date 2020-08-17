@@ -55,8 +55,34 @@ function generatePassword() {
     var confirmNumerical = window.confirm("Would you like your password to contain numbers?");
   }
 if (confirmSpecial && confirmLowercase && confirmUppercase && confirmNumerical) {
-  userRequest = character.concat(specialCharacters, uppercaseLetters, lowercaseLetters, numericalCharacters);
+  var userRequest = specialCharacters.concat(lowercaseLetters, uppercaseLetters, numericalCharacters);
+  console.log (userRequest);
+    // var userRequest = specialCharacters + uppercaseLetters + lowercaseLetters + numericalCharacters;
+}
+
+  else if (confirmSpecial && confirmLowercase) {
+    var userRequest = specialCharacters.concat(lowercaseLetters);
   }
+
+  else if (confirmSpecial && confirmLowercase && confirmUppercase) {
+    var userRequest = specialCharacters.concat(lowercaseLetters + uppercaseLetters);
+  }
+
+  else if (confirmSpecial && confirmNumerical) {
+    var userRequest = specialCharacters.concat(numericalCharacters);
+}
+
+
+
+  else if (!confirmSpecial && !confirmLowercase && !confirmUppercase && !confirmNumerical) {
+    var userRequest = alert("You have to choose something.");
+    console.log(userRequest);
+  }
+
+  if (confirmUppercase === "true") {
+    var userRequest = uppercaseLetters;
+  }
+
 }
 
 // --------------- Main Processes/Event Listeners -----------------
