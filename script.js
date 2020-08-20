@@ -6,8 +6,7 @@
 // create a cariable containing array of numbers 1-9
 // create a variable containing array of lowercase characters
 // create a varaiable containing array of uppercase characters
-// create generateBtn function
-// create writePassword function
+
 
 
 // ------------------ Global Variables ----------------------------
@@ -57,7 +56,7 @@ function generatePassword() {
 if (confirmSpecial && confirmLowercase && confirmUppercase && confirmNumerical) {
   var userRequest = specialCharacters.concat(lowercaseLetters, uppercaseLetters, numericalCharacters);
   console.log (userRequest);
-    // var userRequest = specialCharacters + uppercaseLetters + lowercaseLetters + numericalCharacters;
+   
 }
 
   else if (confirmSpecial && confirmLowercase) {
@@ -73,17 +72,47 @@ if (confirmSpecial && confirmLowercase && confirmUppercase && confirmNumerical) 
 }
 
 
-
   else if (!confirmSpecial && !confirmLowercase && !confirmUppercase && !confirmNumerical) {
     var userRequest = alert("You have to choose something.");
-    console.log(userRequest);
   }
 
-  if (confirmUppercase === "true") {
+  else if (confirmLowercase && confirmUppercase) {
+    var userRequest = lowercaseLetters.concat(uppercaseLetters);
+  }
+
+  else if (confirm)
+
+  if (confirmUppercase === true) {
     var userRequest = uppercaseLetters;
   }
 
+  if (confirmSpecial === true)
+
+  var finalPassword = []
+
+
+  for (var i = 0; i < userRequest; i++) {
+    var mathPassword = userRequest [Math.floor(Math.random() * userRequest.length)];
+    finalPassword.push(mathPassword)
 }
+console.log(finalPassword + "this is a string");
+return finalPassword;
+
+
+}
+
+
+
+
+
+  
+
+
+
+
+
+
+
 
 // --------------- Main Processes/Event Listeners -----------------
 // Add event listener to generate button
